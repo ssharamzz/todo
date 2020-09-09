@@ -1,0 +1,30 @@
+{% extends 'second/layout.html' %}
+{% load static %}
+ {% block title %}
+ <title>Favorite</title>
+ {% endblock %}
+ {% block content %}
+    <div id="container">
+        <div id="fav_title_sec">{{ favourite.name }}<img src="{% static 'second/icon_delete.png' %}" id="fav_img"/><img src="{% static 'second/icon_modify.png' %}" id="fav_img"/></div>
+        <br/>
+        <div id="fav_detail_contents">
+            <div id="fav">
+                순번<br/>
+                명칭<br/>
+                URL<br/>
+                메모<br/>
+                등록일<br/>
+                그룹<br/>
+            </div> 
+
+            <div id = "fav_detail">
+                {{ favourite.seq }}<br/>
+                {{ favourite.name }}<br/>
+                {{ favourite.url }}<br/>
+                {{ favourite.memo }}<br/>
+                {{ favourite.reg_date }}<br/>
+                {{ favourite.group }}<br/>
+            </div>
+        </div>
+    </div>
+{% endblock %}

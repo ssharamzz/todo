@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>학생 점수표</title>
+    </head>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>이름</th>
+                    <th>주소</th>
+                    <th>메모</th>
+                    <th>날짜</th>
+                    <th>그룹</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for favourite in favourites %}
+                <tr>
+                    <td>{{ favourite.seq }}</td>
+                    <td>{{ favourite.name }}</td>
+                    <td>{{ favourite.url }}</td>
+                    <td>{{ favourite.memo }}</td>
+                    <td>{{ favourite.reg_date }}</td>
+                    <td>{{ favourite.group }}</td>
+                </tr>
+                {%endfor%}
+            </tbody>
+        </table>
+    </body>
+</html>

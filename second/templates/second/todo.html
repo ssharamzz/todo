@@ -1,0 +1,40 @@
+{% extends 'second/layout.html' %}
+{% load static %}
+ {% block title %}
+ <title>Todo</title>
+ {% endblock %}
+ {% block content %}
+    <div id="container">
+        <div id="todo_title">내가 할 일<img src="{% static 'second/icon_add.png' %}" id="todo_img"/></div>
+        <div id="pending">
+            <h3>대기중</h3>
+            {% for pending in pendings %}
+                <div id="todo_contents">
+                    <div id="one"><a href="{% url 'second:todo_detail' pending.seq %}">{{ pending.name }}</a></div>
+                    <div id="three"><img src="{% static 'second/icon_more.png' %}" /></div>
+                    <div id="two">{{ pending.reg_date|date:'Y-m-d' }}</div>
+                </div>
+            {%endfor%}
+        </div>
+        <div id="inprogress">
+            <h3>진행중</h3>
+            {% for inpro in inprogress %}
+                <div id="todo_contents">
+                    <div id="one"><a href="{% url 'second:todo_detail' inpro.seq %}">{{ inpro.name }}</a></div>
+                    <div id="three"><img src="{% static 'second/icon_more.png' %}" /></div>
+                    <div id="two">{{ inpro.reg_date|date:'Y-m-d' }}</div>
+                </div>
+            {%endfor%}
+        </div>
+        <div id="end">
+            <h3>완료</h3>
+            {% for end in ends %}
+                <div id="todo_contents">
+                    <div id="one"><a href="{% url 'second:todo_detail' end.seq %}">{{ end.name }}</a></div>
+                    <div id="three"><img src="{% static 'second/icon_more.png' %}" /></div>
+                    <div id="two">{{ end.reg_date|date:'Y-m-d' }}</div>
+                </div>
+            {%endfor%}
+        </div>
+    </div>
+{% endblock %}

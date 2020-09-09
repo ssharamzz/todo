@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>학생 점수표</title>
+    </head>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <th>이름</th>
+                    <th>수학</th>
+                    <th>과학</th>
+                    <th>영어</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for score in scores %}
+                <tr>
+                    <td>{{ score.name }}</td>
+                    <td>{{ score.math }}</td>
+                    <td>{{ score.science }}</td>
+                    <td>{{ score.english }}</td>
+                </tr>
+                {%endfor%}
+            </tbody>
+        </table>
+    </body>
+</html>

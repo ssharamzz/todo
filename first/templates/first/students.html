@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>학생들</title>
+    </head>
+    <body>
+        <h3>{{ text }}</h3>
+        {% for student in students %}
+        {% comment %} 안에있는 내용 반복 for문 {% endcomment %}
+        <div>
+            {{ student.name }}
+            {{ student.address }}
+            {{ student.email }}
+        </div>
+        {% endfor %}
+    </body>
+</html>

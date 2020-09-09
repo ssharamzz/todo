@@ -1,0 +1,18 @@
+{% extends 'second/layout.html' %}
+{% load static %}
+ {% block title %}
+ <title>Favorite</title>
+ {% endblock %}
+ {% block content %}
+    <div id="container">
+        <div id="fav_title">즐겨찾기<img src="{% static 'second/icon_add.png' %}" id="fav_img"/></div>
+        <br/>
+        {% for fav in favourites %}
+            <div id="fav_contents">
+                <div id="one"><a href="{% url 'second:fav_detail' fav.seq %}">{{ fav.name }}</a></div>
+                <div id="three"><img src="{% static 'second/icon_more.png' %}" /></div>
+                <div id="two">{{ fav.reg_date|date:'Y-m-d' }}</div>
+            </div>
+        {%endfor%}
+    </div>
+{% endblock %}

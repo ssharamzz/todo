@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'second/style.css' %}">
+    {% block title %}
+    {% endblock %}
+</head>
+<body>
+    <ul id="homenav">
+        <li><a id="title">Dogo&Favorite</a></li>
+        <br/>
+        <br/>
+        <li><a href="{% url 'second:layout' %}"><img src="{% static 'second/icon_home.png' %}" id="logo"/>Home</a></li>
+        <li><a href="{% url 'second:favourites' %}"><img src="{% static 'second/icon_favorite.png' %}" id="logo"/>Favorite</a></li>
+        <li><a href="{% url 'second:todos' %}"><img src="{% static 'second/icon_todo.png' %}" id="logo"/>Todo</a></li>
+    </ul> 
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

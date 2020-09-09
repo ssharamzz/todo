@@ -1,0 +1,32 @@
+{% extends 'second/layout.html' %}
+{% load static %}
+ {% block title %}
+ <title>Todo</title>
+ {% endblock %}
+ {% block content %}
+    <div id="container">
+        <div id="todo_title_sec">{{ todo.name }}<img src="{% static 'second/icon_delete.png' %}" id="todo_img"/><img src="{% static 'second/icon_modify.png' %}" id="todo_img"/></div>
+        <br/>
+        <div id="todo_detail_contents">
+            <div id="todo">
+                순번<br/>
+                명칭<br/>
+                상태<br/>
+                등록일<br/>
+                종료일<br/>
+                삭제여부<br/>
+                그룹<br/>
+            </div> 
+
+            <div id = "todo_detail">
+                {{ todo.seq }}<br/>
+                {{ todo.name }}<br/>
+                {{ todo.status }}<br/>
+                {{ todo.reg_date }}<br/>
+                {{ todo.end_date }}<br/>
+                {{ todo.del_yn }}<br/>
+                {{ todo.group }}<br/>
+            </div>
+        </div>
+    </div>
+{% endblock %}
